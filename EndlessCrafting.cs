@@ -40,6 +40,12 @@ namespace EndlessCrafting
             addMounts();
             addPets();
             addBossSummons();
+
+            ModRecipe recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.ChlorophyteBar, 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(ItemID.LifeFruit);
+            recipe.AddRecipe();
         }
 
         private void addBossSummons()

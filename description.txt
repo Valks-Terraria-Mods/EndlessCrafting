@@ -45,6 +45,9 @@ Also all boss summons are craftable now!
 
 Enjoy!
 
+v1.3.1
+Added life fruit recipe.
+
 v1.3
 Merged master
 
