@@ -1,3 +1,5 @@
+# Recipes
+
 ### Prehardmode
 
 - Alchemy Table (25 wood*, 12 iron*, 3 bottles)
