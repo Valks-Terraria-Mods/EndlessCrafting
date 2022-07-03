@@ -37,7 +37,7 @@ public class EndlessCrafting : Mod
         AddPets();
         AddBossSummons();
 
-        CreateRecipe(ItemID.LifeFruit)
+        Recipe.Create(ItemID.LifeFruit)
             .AddIngredient(ItemID.ChlorophyteBar, 1)
             .AddTile(TileID.WorkBenches)
             .Register();
@@ -210,7 +210,7 @@ public class EndlessCrafting : Mod
 
     private void SimpleRecipe(int result, int ingredient, int ingredientAmount = 1)
     {
-        CreateRecipe(result)
+        Recipe.Create(result)
             .AddIngredient(ingredient, ingredientAmount)
             .AddTile(TileID.WorkBenches)
             .Register();
@@ -218,7 +218,7 @@ public class EndlessCrafting : Mod
 
     private void RecipeMultipleIngredients(int result, params int[] ingredients) 
     {
-        var recipe = CreateRecipe(result);
+        var recipe = Recipe.Create(result);
 
         foreach (var ingredient in ingredients)
             recipe.AddIngredient(ingredient);
@@ -229,7 +229,7 @@ public class EndlessCrafting : Mod
 
     private void RecipeMultipleIngredients(int result, params Item[] ingredients)
     {
-        var recipe = CreateRecipe(result);
+        var recipe = Recipe.Create(result);
 
         foreach (var ingredient in ingredients)
             if (ingredient.IsGroup)
@@ -243,7 +243,7 @@ public class EndlessCrafting : Mod
 
     private void RecipeWithLifeCrystal(int result, params int[] ingredients) 
     {
-        var recipe = CreateRecipe(result);
+        var recipe = Recipe.Create(result);
         recipe.AddIngredient(ItemID.LifeCrystal);
         foreach (var ingredient in ingredients)
             recipe.AddIngredient(ingredient);
