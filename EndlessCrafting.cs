@@ -4,25 +4,25 @@ using Terraria.ModLoader;
 
 namespace EndlessCrafting;
 
-public class EndlessCrafting : Mod
+public class EndlessCrafting : ModSystem
 {
     public override void AddRecipeGroups()
     {
-        RecipeGroup shadowScales = new RecipeGroup(() => Lang.misc[37] + " Shadow Scale", new int[]
+        RecipeGroup shadowScales = new(() => Lang.misc[37] + " Shadow Scale", new int[]
         {
             ItemID.ShadowScale,
             ItemID.TissueSample
         });
         RecipeGroup.RegisterGroup("EndlessCrafting:ShadowScales", shadowScales);
 
-        RecipeGroup goldBars = new RecipeGroup(() => Lang.misc[37] + " Gold Bar", new int[]
+        RecipeGroup goldBars = new(() => Lang.misc[37] + " Gold Bar", new int[]
         {
             ItemID.GoldBar,
             ItemID.PlatinumBar
         });
         RecipeGroup.RegisterGroup("EndlessCrafting:GoldBars", goldBars);
 
-        RecipeGroup crimstoneBlocks = new RecipeGroup(() => Lang.misc[37] + " Crimstone Block", new int[]
+        RecipeGroup crimstoneBlocks = new(() => Lang.misc[37] + " Crimstone Block", new int[]
         {
             ItemID.CrimstoneBlock,
             ItemID.EbonstoneBlock
@@ -208,13 +208,11 @@ public class EndlessCrafting : Mod
             new Item(ItemID.SiltBlock, 50));
     }
 
-    private void SimpleRecipe(int result, int ingredient, int ingredientAmount = 1)
-    {
+    private void SimpleRecipe(int result, int ingredient, int ingredientAmount = 1) =>
         Recipe.Create(result)
             .AddIngredient(ingredient, ingredientAmount)
             .AddTile(TileID.WorkBenches)
             .Register();
-    }
 
     private void RecipeMultipleIngredients(int result, params int[] ingredients) 
     {
