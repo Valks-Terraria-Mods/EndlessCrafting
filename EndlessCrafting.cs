@@ -36,11 +36,27 @@ public class EndlessCrafting : ModSystem
         AddMounts();
         AddPets();
         AddBossSummons();
+        AddGraveStones();
 
         Recipe.Create(ItemID.LifeFruit)
             .AddIngredient(ItemID.ChlorophyteBar, 1)
             .AddTile(TileID.WorkBenches)
             .Register();
+    }
+
+    private void AddGraveStones()
+    {
+        SimpleRecipe(ItemID.Tombstone, ItemID.StoneBlock, 5);
+        SimpleRecipe(ItemID.GraveMarker, ItemID.Wood, 5);
+        SimpleRecipe(ItemID.CrossGraveMarker, ItemID.Wood, 5);
+        SimpleRecipe(ItemID.Headstone, ItemID.StoneBlock, 5);
+        SimpleRecipe(ItemID.Gravestone, ItemID.StoneBlock, 5);
+        SimpleRecipe(ItemID.Obelisk, ItemID.StoneBlock, 5);
+        SimpleRecipe(ItemID.RichGravestone1, ItemID.GoldBar, 5);
+        SimpleRecipe(ItemID.RichGravestone2, ItemID.GoldBar, 5);
+        SimpleRecipe(ItemID.RichGravestone3, ItemID.GoldBar, 5);
+        SimpleRecipe(ItemID.RichGravestone4, ItemID.GoldBar, 5);
+        SimpleRecipe(ItemID.RichGravestone5, ItemID.GoldBar, 5);
     }
 
     private void AddBossSummons()
